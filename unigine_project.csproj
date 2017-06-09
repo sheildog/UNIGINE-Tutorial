@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    <ProjectGuid>{7EF5F580-3181-42F4-9082-BAE442C2A191}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnigineApp</RootNamespace>
+    <AssemblyName>unigine_project</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNIGINE_DOUBLE;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <StartArguments>-data_path ../ -engine_config "../data/unigine_project/unigine.cfg" -console_command "world_load \"unigine_project/unigine_project\""</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin</OutputPath>
+    <DefineConstants>TRACE;UNIGINE_DOUBLE;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <StartArguments>-data_path ../ -engine_config "../data/unigine_project/unigine.cfg" -console_command "world_load \"unigine_project/unigine_project\""</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNIGINE_DOUBLE;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <StartArguments>-data_path ../ -engine_config "../data/unigine_project/unigine.cfg" -console_command "world_load \"unigine_project/unigine_project\""</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin</OutputPath>
+    <DefineConstants>TRACE;UNIGINE_DOUBLE;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <StartArguments>-data_path ../ -engine_config "../data/unigine_project/unigine.cfg" -console_command "world_load \"unigine_project/unigine_project\""</StartArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnigineSharp">
+      <SpecificVersion>false</SpecificVersion>
+      <HintPath Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">C:\Unigine SDK Browser\sdks\evaluation_sim_windows_2.5\bin\UnigineSharp_x86d.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)'=='Release|x86'">C:\Unigine SDK Browser\sdks\evaluation_sim_windows_2.5\bin\UnigineSharp_x86.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Unigine SDK Browser\sdks\evaluation_sim_windows_2.5\bin\UnigineSharp_x64d.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Unigine SDK Browser\sdks\evaluation_sim_windows_2.5\bin\UnigineSharp_x64.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="unigine_project.cs" />
+    <Compile Include="AppEditorLogic.cs" />
+    <Compile Include="AppSystemLogic.cs" />
+    <Compile Include="AppWorldLogic.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
